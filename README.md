@@ -27,20 +27,20 @@
 -----------------------
 
 
+Awards
+-----------------------
+VES Award Best Student Project 2013
+
+
 What is it ?
 -----------------------
-**Pipeline repository** for the project rugbybugs for which i served as Pipeline, Rigging and Lighting/Shading TD. The repository was created long after the project finished to serve as a code backup.
+**Pipeline repository** for the project rugbybugs for which i served as **Pipeline, Rigging and Lighting/Shading TD**. The repository was created long after the project finished to serve as a code backup.
 
 The content of the repository consists mainly of:
 * Render setup scripts for Vray for Maya
 * Render reconstruction scripts for Nuke
 * Scripted rigging modules
 * Environment setup scripts for Maya and Nuke
-
-
-Awards
------------------------
-VES Award Best Student Project 2013
 
 
 -----------------------
