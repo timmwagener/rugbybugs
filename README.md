@@ -35,6 +35,7 @@ The content of the repository consists mainly of:
 * Render setup scripts for Vray for Maya
 * Render reconstruction scripts for Nuke
 * Scripted rigging modules
+* Environment setup scripts for Maya and Nuke
 
 
 Awards
