@@ -1,0 +1,125 @@
+#! C:/Program Files/Nuke7.0v1/Nuke7.0.exe -nx
+version 7.0 v1
+Gizmo {
+ addUserKnob {20 Tab l Controls}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {26 about l "" t "you could be working right now...." +STARTLINE T "Rugbybugs Output Gizmo v0001"}
+ addUserKnob {26 "" +STARTLINE}
+ addUserKnob {41 letterbox_mix l "ITFS letterbox opacity" t "1 for black" T Merge1.mix}
+ addUserKnob {6 infos l "burn in infos" t "frames - name - time - date" +STARTLINE}
+ infos true
+}
+ Constant {
+  inputs 0
+  color {0 0 0 0}
+  name Constant2
+  xpos 238
+  ypos -232
+ }
+set N18498cf0 [stack 0]
+ Text {
+  message "f \[format %04d \[frame]] "
+  font C:/Windows/Fonts/consola.ttf
+  size 40
+  yjustify center
+  Transform 1
+  box {10 520 1920 562}
+  translate {0 -520}
+  center {960 540}
+  name framecounter
+  xpos 300
+  ypos -144
+ }
+ Text {
+  message "\[basename \[value root.name]]"
+  font C:/Windows/Fonts/consola.ttf
+  size 40
+  yjustify center
+  Transform 1
+  box {250 520 1920 562}
+  translate {0 -520}
+  center {960 540}
+  name name
+  selected true
+  xpos 300
+  ypos -120
+ }
+ Text {
+  message "\[date %d].\[date %m].\[date %y]"
+  font C:/Windows/Fonts/consola.ttf
+  size 40
+  xjustify right
+  yjustify center
+  Transform 1
+  box {0 520 1910 562}
+  translate {0 -520}
+  center {960 540}
+  name date
+  xpos 300
+  ypos -96
+ }
+ Text {
+  message "\[date %H]:\[date %M]:\[date %S]"
+  font C:/Windows/Fonts/consola.ttf
+  size 40
+  xjustify right
+  yjustify center
+  Transform 1
+  box {0 520 1620 562}
+  translate {0 -520}
+  center {960 540}
+  name time
+  xpos 300
+  ypos -72
+ }
+push $N18498cf0
+ Rectangle {
+  area {0 1059 1920 21}
+  name Rectangle1
+  xpos 180
+  ypos -141
+ }
+ Constant {
+  inputs 0
+  color {0 0 0 1}
+  name Constant1
+  xpos -94
+  ypos -165
+ }
+ Input {
+  inputs 0
+  name img
+  xpos 26
+  ypos -259
+ }
+ Reformat {
+  name Reformat1
+  xpos 26
+  ypos -219
+ }
+ Shuffle {
+  alpha white
+  name Shuffle1
+  xpos 26
+  ypos -195
+ }
+ Merge2 {
+  inputs 2+1
+  invert_mask true
+  name Merge1
+  xpos 26
+  ypos -141
+ }
+ Merge2 {
+  inputs 2
+  name Merge2
+  xpos 26
+  ypos -72
+  disable {{"infos ==1 ? 0 : 1"}}
+ }
+ Output {
+  name Output1
+  xpos 26
+  ypos 28
+ }
+end_group

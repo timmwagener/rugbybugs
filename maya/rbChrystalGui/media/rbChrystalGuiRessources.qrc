@@ -1,0 +1,5 @@
+<RCC>
+  <qresource prefix="headerImage">
+    <file>rbChrystalGuiHeader.jpg</file>
+  </qresource>
+</RCC>

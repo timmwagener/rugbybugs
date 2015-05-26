@@ -1,0 +1,633 @@
+global proc shelf_RugbyBugs () {
+    global string $gBuffStr;
+    global string $gBuffStr0;
+    global string $gBuffStr1;
+
+
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "RugbyBugsUi" 
+        -enableBackground 0
+        -align "center" 
+        -label "RugbyBugsUi" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfUi.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfUi.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from rugbyBugs.maya.rugbyBugsMayaInterface import rugbyBugsMayaInterface;\nreload(rugbyBugsMayaInterface)\nrugbyBugsMayaInterfaceInstance = rugbyBugsMayaInterface.RugbyBugsMayaInterface()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "headerLightingShading" 
+        -enableBackground 0
+        -align "center" 
+        -label "headerLighting" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconDummy.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconDummy.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"Lighting and Shading\");" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "setVrayGlobals" 
+        -enableBackground 0
+        -align "center" 
+        -label "setVrayGlobals" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfVrayGlobals.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfVrayGlobals.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n#Import\nfrom rugbyBugs.maya.rbSetVrayRenderGlobals import rbSetVrayRenderGlobals\nif(doReload): reload(rbSetVrayRenderGlobals)\n\n#Execute\nrbSetVrayRenderGlobals.RbSetVrayRenderGlobals().setVrayRenderSettings()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "setVrayGlobalsLinearOnly" 
+        -enableBackground 0
+        -align "center" 
+        -label "setVrayGlobalsLinearOnly" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfVrayGlobalsLinear.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfVrayGlobalsLinear.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n#Import\nfrom rugbyBugs.maya.rbSetVrayRenderGlobals import rbSetVrayRenderGlobals\nif(doReload): reload(rbSetVrayRenderGlobals)\n\n#Execute\nrbSetVrayRenderGlobals.RbSetVrayRenderGlobals().setVrayRenderSettingsLinear()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "createBasicGroups" 
+        -enableBackground 0
+        -align "center" 
+        -label "createBasicGroups" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfGroups.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfGroups.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n\n#Grouping\nfrom rugbyBugs.maya.rbGrouping import rbGrouping\nif(doReload): reload(rbGrouping)\n\n\n#Execute\nrbGrouping.RbGrouping().createBaseGroups()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "createUpdateLightREs" 
+        -enableBackground 0
+        -align "center" 
+        -label "createUpdateLightREs" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfLightRE.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfLightRE.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n\n#Import and reload Light Render Elements\nfrom rugbyBugs.maya.rbCreateUpdateRenderElements import rbCreateUpdateLightRenderElements\nif(doReload): reload(rbCreateUpdateLightRenderElements)\n\n\n#Execute\nrbCreateUpdateLightRenderElements.RbCreateUpdateLightRenderElements().createUpdateLightRenderElements()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "createUpdateFramebufferREs" 
+        -enableBackground 0
+        -align "center" 
+        -label "createUpdateFramebufferREs" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfFramebufferRE.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfFramebufferRE.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n\n#Import and reload Light Render Elements\nfrom rugbyBugs.maya.rbCreateUpdateRenderElements import rbCreateFrameBufferContributions\nif(doReload): reload(rbCreateFrameBufferContributions)\n\n\n#Execute\nrbCreateFrameBufferContributions.RbCreateFrameBufferContributions().createFrameBufferContributions()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "createUpdateDataREs" 
+        -enableBackground 0
+        -align "center" 
+        -label "createUpdateDataREs" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfDataRE.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfDataRE.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n\n#Import and reload Light Render Elements\nfrom rugbyBugs.maya.rbCreateUpdateRenderElements import rbCreateDataPasses\nif(doReload): reload(rbCreateDataPasses)\n\n\n#Execute\nrbCreateDataPasses.RbCreateDataPasses().createDataPasses()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "createUpdateMultiMatteREs" 
+        -enableBackground 0
+        -align "center" 
+        -label "createUpdateMultiMatteREs" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfMmRE.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfMmRE.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n\n#Import and reload Light Render Elements\nfrom rugbyBugs.maya.rbCreateUpdateRenderElements import rbCreateUpdateMmRenderElements\nif(doReload): reload(rbCreateUpdateMmRenderElements)\n\n\n#Execute\nrbCreateUpdateMmRenderElements.RbCreateUpdateMmRenderElements().createUpdateMultiMatteElements()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "createUpdateShadowREs" 
+        -enableBackground 0
+        -align "center" 
+        -label "createUpdateShadowREs" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfShadowRE.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfShadowRE.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "\n#Reload boolean\ndoReload = True\n\n\n#Import and reload Light Render Elements\nfrom rugbyBugs.maya.rbCreateUpdateRenderElements import rbCreateShadowPass\nif(doReload): reload(rbCreateShadowPass)\n\n\n#Execute\nrbCreateShadowPass.RbCreateShadowPass().createShadowPass()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "renderPathTesting" 
+        -enableBackground 0
+        -align "center" 
+        -label "renderPathTesting" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSetRenderpathTesting.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSetRenderpathTesting.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from rugbyBugs.maya.rbRenderPathes import rbRenderPathes\n\n#Reload if true\ndoReload = True\nif(doReload): reload(rbRenderPathes)\n\n#Create Instance\nrbRenderPathesInstance = rbRenderPathes.RbRenderPathes()\n\n#set final path\n#rbRenderPathesInstance.setPathLighting()\nrbRenderPathesInstance.setPathTesting()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "renderPathLighting" 
+        -enableBackground 0
+        -align "center" 
+        -label "renderPathLighting" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSetRenderpathLighting.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSetRenderpathLighting.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from rugbyBugs.maya.rbRenderPathes import rbRenderPathes\n\n#Reload if true\ndoReload = True\nif(doReload): reload(rbRenderPathes)\n\n#Create Instance\nrbRenderPathesInstance = rbRenderPathes.RbRenderPathes()\n\n#set final path\nrbRenderPathesInstance.setPathLighting()\n#rbRenderPathesInstance.setPathTesting()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "fixVrayVFB" 
+        -enableBackground 0
+        -align "center" 
+        -label "fixVrayVFB" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfFixVrayVFB.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfFixVrayVFB.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "setAttr \"vraySettings.vfbSettingsArr\" -type Int32Array 0;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "saveAndSubmitToRR" 
+        -enableBackground 0
+        -align "center" 
+        -label "saveAndSubmitToRR" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSaveAndSubmitToRR.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSaveAndSubmitToRR.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from rugbyBugs.maya.rbRrSubmit import rbRrSubmit\nreload(rbRrSubmit)\nrbRrSubmit.RbRrSubmit.saveAndSubmitToRr()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "headerAnimation" 
+        -enableBackground 0
+        -align "center" 
+        -label "headerAnimation" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconDummy.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconDummy.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"User defined macro\");" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "transferKeysRelativeToWorld" 
+        -enableBackground 0
+        -align "center" 
+        -label "transferKeysRelativeToWorld" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfTransferKeys.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfTransferKeys.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "#rbTransferKeysRelativeToWorldSpace\nfrom rugbyBugs.maya.rbTransferKeysRelativeToWorldSpace import rbTransferKeysRelativeToWorldSpace\ndoReload = True\nif(doReload): reload(rbTransferKeysRelativeToWorldSpace)\nrbTransferKeysRelativeToWorldSpace.RbTransferKeysRelativeToWorldSpace().transferKeysRelativeToWorldSpace()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "bakeKeysRelativeToWorldspace" 
+        -enableBackground 0
+        -align "center" 
+        -label "bakeKeysRelativeToWorldspace" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfBakeKeys.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfBakeKeys.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "#rbTransferKeysRelativeToWorldSpace\nfrom rugbyBugs.maya.rbTransferKeysRelativeToWorldSpace import rbTransferKeysRelativeToWorldSpace\ndoReload = True\nif(doReload): reload(rbTransferKeysRelativeToWorldSpace)\nrbTransferKeysRelativeToWorldSpace.RbTransferKeysRelativeToWorldSpace().transferKeysRelativeToWorldSpace(bake = True)" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "chrystalGui" 
+        -enableBackground 0
+        -align "center" 
+        -label "chrystalGui" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconChrystalGui.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconChrystalGui.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "from rugbyBugs.maya.rbChrystalGui import rbChrystalGui\n\ndoReload = True\nif(doReload): reload(rbChrystalGui)\n\nrbChrystalGuiInstance = rbChrystalGui.RbChrystalGui()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "headerThirdParty" 
+        -enableBackground 0
+        -align "center" 
+        -label "headerThirdParty" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconDummy.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconDummy.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "print(\"User defined macro\");" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "prSelection" 
+        -enableBackground 0
+        -align "center" 
+        -label "prSelection" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfPrSel.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfPrSel.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import prSelectionUi\nreload(prSelectionUi)\nprSelectionUi.UI()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "carlaHSkinweightsEditor" 
+        -enableBackground 0
+        -align "center" 
+        -label "carlaHSkinweightsEditor" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfCarlaHSkinweights.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfCarlaHSkinweights.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "carlaH_skinWeightsEditor;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "djRivet" 
+        -enableBackground 0
+        -align "center" 
+        -label "djRivet" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfDjRivet.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfDjRivet.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "djRivet;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "abSymMesh" 
+        -enableBackground 0
+        -align "center" 
+        -label "abSymMesh" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSymMesh.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfSymMesh.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "abSymMesh();" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "cvShapeInverter" 
+        -enableBackground 0
+        -align "center" 
+        -label "cvShapeInverter" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfCvShapeInverter.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfCvShapeInverter.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "import cvShapeInverter\n\ncvShapeInverter.invert()" 
+        -sourceType "python" 
+        -commandRepeatable 1
+    ;
+    shelfButton
+        -enableCommandRepeat 1
+        -enable 1
+        -width 35
+        -height 35
+        -manage 1
+        -visible 1
+        -preventOverride 0
+        -annotation "poseSpaceDeformer" 
+        -enableBackground 0
+        -align "center" 
+        -label "poseSpaceDeformer" 
+        -labelOffset 0
+        -font "plainLabelFont" 
+        -overlayLabelColor 0.8 0.8 0.8 
+        -overlayLabelBackColor 0 0 0 0.2 
+        -image "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfPoseSpaceDeformer.png" 
+        -image1 "//grey09/rugbybugs/Production/Scripts/deploy/rugbyBugs/maya/icons/iconShelfPoseSpaceDeformer.png" 
+        -style "iconOnly" 
+        -marginWidth 1
+        -marginHeight 1
+        -command "poseDeformerUI;" 
+        -sourceType "mel" 
+        -commandRepeatable 1
+    ;
+
+} 
