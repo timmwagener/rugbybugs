@@ -1,7 +1,7 @@
 
 
 <div align="center">
-	<a href="https://vimeo.com/timmwagener/rugbybugs" target="_blank"><img src="http://www.kiiia.com/rugbyBugs/repo/fmx_logo.jpg"></a>
+	<a href="https://vimeo.com/timmwagener/rugbybugs" target="_blank"><img src="http://www.kiiia.com/rugbyBugs/repo/dragonfly.jpg"></a>
 </div>
 -----------------------
 <div align="left">
@@ -29,7 +29,12 @@
 
 What is it ?
 -----------------------
-**Pipeline repository** for the VES award winning project rugbybugs for which i served as Pipeline, Rigging and Lighting/Shading TD. The repository was created long after the project finished to serve as a code backup.
+**Pipeline repository** for the project rugbybugs for which i served as Pipeline, Rigging and Lighting/Shading TD. The repository was created long after the project finished to serve as a code backup.
+
+
+Awards
+-----------------------
+VES Award Best Student Project 2013
 
 
 -----------------------
